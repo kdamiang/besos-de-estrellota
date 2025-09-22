@@ -1,0 +1,73 @@
+<head>
+    <meta charset="UTF-8">
+    <title>besos xd</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #d63384;
+        }
+
+        .botones {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #si {
+            background-color: #28a745;
+            color: white;
+        }
+
+        #no {
+            background-color: #dc3545;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>¿ Hola estrellita una duda💖? </h1>
+    <h1>¿ Te puedo dar un besito en la boquita😘?</h1>
+
+    <div class="botones">
+        <button id="si">Sí</button>
+        <button id="no">No</button>
+    </div>
+
+    <script>
+        const btnNo = document.getElementById("no");
+        const btnSi = document.getElementById("si");
+
+        // Mover el botón "No" cuando el mouse intenta tocarlo
+        btnNo.addEventListener("mouseover", () => {
+            const x = Math.floor(Math.random() * (window.innerWidth - btnNo.clientWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - btnNo.clientHeight));
+            btnNo.style.left = x + "px";
+            btnNo.style.top = y + "px";
+        });
+
+        // Al dar clic en "Sí"
+        btnSi.addEventListener("click", () => {
+            document.body.innerHTML = "<h1 style='color:#d63384;'>¡Sabía que dirías que sí jjajjaj! 💕</h1>";
+            document.body.style.backgroundColor = "#fff0f5";
+        });
+    </script>
+</body>
